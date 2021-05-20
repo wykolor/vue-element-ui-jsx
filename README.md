@@ -27,7 +27,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### KolorTable组件 Attributes
 
-> 根容器为el-table组件，组件的Attributes除了以下新增的之外，还支持所有el-table的Attributes和事件
+> 根容器为el-table组件，组件的Attributes除了以下新增的之外，还支持所有el-table的Attributes
 
 | 新增参数 | 说明 | 类型 | 可选值 | 默认值 |
 | :----: | :----: | :----: | :----: | :----: |
@@ -36,6 +36,45 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 | show-pagination | 是否展示分页器 | boolean | false/true |    true    |       
 | pagination | 分页配置 | Object | 全部为el-pagination的Attributes |     -  |        
 
+
+### KolorTable组件 Events 
+
+> 除了下面新增的events之外，还支持所有el-table的events
+
+| 事件名 | 说明 | 返回值 | 
+| :----: | :----: | :----: | 
+| page-change | 监听分页变化，映射 <el-pagination>组件的所有事件 | { currentPage, pageSize } | 
+
+
+### 父组件访问el-table组件实例
+
+```JavaScript
+
+<KolorTableJsx 
+  :data="tableData" 
+  :columns="columns" 
+  :border="true" 
+  :pagination="pagination"
+  :show-pagination="true"
+  @page-change="pageChange"
+  @row-click="rowClick"
+  stripe
+  ref="kolorTable"
+/>
+
+...
+
+this.$refs.multipleTable.ElTable();
+
+// 拿到实例时候，可以执行所有官方el-table的Methods
+
+// 例： 用于多选表格，清空用户的选择  其余Methods查看element-ui官方文档 
+
+<[链接地址](https://element.eleme.cn/#/zh-CN/component/table#table-methods)>
+
+this.$refs.multipleTable.ElTable().clearSelection();
+
+```
 
 ### KolorQueryFormJsx 组件 Attributes
 
