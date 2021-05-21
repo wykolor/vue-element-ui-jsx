@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <h1>element-ui 的table、表单组件二次封装</h1>
     <!-- 查询组件 -->
     <KolorQueryForm :formItems="formItems" v-model="model" @form-item-change="formItemChange" />
     <!-- 表单组件 -->
