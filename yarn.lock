@@ -5082,10 +5082,10 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   resolved "https://registry.npm.taobao.org/kind-of/download/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
   integrity sha1-B8BQNKbDSfoG4k+jWqdttFgM5N0=
 
-kolor-element-ui@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/kolor-element-ui/-/kolor-element-ui-1.0.0.tgz#eda7bea4b95d7ff2fceab753a98814cb343aab04"
-  integrity sha512-/+i1cTqk33iA1KWBOG0eYvpFUjVbTEP104M02RceUivqN8y9+B0oYJtMB8pWUUS6APRqp/DrJJpbcr2rRtPyWw==
+kolor-element-ui@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/kolor-element-ui/-/kolor-element-ui-1.0.1.tgz#955a4d46fad96ef8b5df5bf72e6346f6681719c8"
+  integrity sha512-ly4UIeuSzKqQyJGP+xjHf3IPQwahJjlRMx13GCYSsMxUj+/PQrsRGC1ZK+2nrcmwvECKfW8CK3ILAGsWk0PqRg==
   dependencies:
     core-js "^3.6.5"
     vue "^2.6.11"

@@ -3,7 +3,7 @@ import App from './App.vue'
 
 
 
-import KoUI from 'kolor-element-ui';
+import KoUI from './../packages';
 Vue.use(KoUI)
 
 import './plugins/element.js'

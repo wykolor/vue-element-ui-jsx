@@ -39,8 +39,15 @@ export default {
     },
     pageListeners() {
       return {
-        'size-change': pageSize => this.$emit('page-change', {pageSize, currentPage: this.mergedPagination['current-page']}),
-        'current-change': currentPage => this.$emit('page-change', {pageSize: this.mergedPagination['page-size'], currentPage}),
+        'size-change': pageSize => {
+          this.defaultPagination['page-size'] = pageSize;
+          this.defaultPagination['current-page'] = 1;
+          this.$emit('page-change', {pageSize, currentPage: this.defaultPagination['current-page']});
+        },
+        'current-change': currentPage => { 
+           this.defaultPagination['current-page'] = currentPage;
+          this.$emit('page-change', {pageSize: this.mergedPagination['page-size'], currentPage});
+        },
       }
     },
   },
@@ -53,6 +60,7 @@ export default {
     const elTableProps = ElTable.props;
     // 从$attrs里提取作为prop的值
     const { props, attrs } = getPropsAndAttrs(this.$attrs, elTableProps);
+    
     const tableAttrs = {
       attrs,
       on: {
@@ -64,10 +72,26 @@ export default {
       },
       ref: 'ElTable'
     };
+
+    /**分页器的attr */ 
+    const paginnationAttrs = {
+      props: this.mergedPagination, 
+      on: {
+        'size-change': pageSize => {
+          this.defaultPagination['page-size'] = pageSize;
+          this.defaultPagination['current-page'] = 1;
+          this.$emit('page-change', { pageSize, currentPage: this.defaultPagination['current-page']});
+        },
+        'current-change': currentPage => { 
+          this.defaultPagination['current-page'] = currentPage;
+          this.$emit('page-change', {pageSize: this.mergedPagination['page-size'], currentPage});
+        }
+      }
+    };
     return (
       <div class="el-table-jsx">
         <el-table {...tableAttrs}>
-          {this.columns.map((column, index) => {
+          { this.columns.map((column, index) => {
             const { scopedSlots, ...columnProps } = column;
             return (
               <el-table-column
@@ -76,14 +100,9 @@ export default {
                 scopedSlots={scopedSlots}
               />
             );
-          })}
+          }) }
         </el-table>
-        {this.showPagination && 
-          <el-pagination 
-            props={this.mergedPagination}
-            on={this.pageListeners}
-          />
-        }
+        { this.showPagination && <el-pagination {...paginnationAttrs}/> }
       </div>
     );
   },
