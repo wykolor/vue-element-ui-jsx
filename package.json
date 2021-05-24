@@ -1,16 +1,23 @@
 {
-  "name": "vue-jsx",
-  "version": "0.1.0",
-  "private": true,
+  "name": "kolor-element-ui",
+  "version": "1.0.0",
+  "private": false,
+  "description": "二次封装（多是通过jsx的方式）element-ui的部分组件",
+  "author": "kolor <kolor1121460147@163.com>",
   "scripts": {
-    "start": "yarn serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lib": "vue-cli-service build --target lib --name kolor-element-ui --dest lib packages/index.js",
+    "start": "yarn serve"
   },
+  "main": "lib/kolor-element-ui.umd.min.js",
+  "files": [
+    "dist",
+    "src"
+  ],
   "dependencies": {
     "core-js": "^3.6.5",
-    "element-ui": "^2.15.1",
     "vue": "^2.6.11"
   },
   "devDependencies": {
@@ -18,8 +25,11 @@
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
+    "element-ui": "^2.15.1",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "kolor-element-ui": "^1.0.0",
+    "vue-cli-plugin-element": "^1.0.1",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
@@ -40,5 +50,15 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "keywords": [
+    "vue",
+    "element-ui",
+    "kolor-element-ui"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://dev.jiuaoedu.com/wykolor/vue-element-ui-jsx"
+  }
 }

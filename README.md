@@ -1,4 +1,4 @@
-# vue-element-ui-jsx
+# kolor-element-ui
 
 基于vue2+ 使用jsx二次封装element-ui的业务组件，通过全数据配置方式生成视图
 
@@ -50,7 +50,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ```JavaScript
 
-<KolorTableJsx 
+<ko-table 
   :data="tableData" 
   :columns="columns" 
   :border="true" 

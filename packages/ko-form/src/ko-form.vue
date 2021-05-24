@@ -1,8 +1,9 @@
 <script>
 import ElForm from "element-ui/lib/form";
-import { getPropsAndAttrs } from '../utils/index';
+import { getPropsAndAttrs } from '../../utils';
 
 export default {
+  name: 'KoForm',
   model: {
     prop: 'model',
   },

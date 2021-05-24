@@ -2,9 +2,9 @@
   <div id="app">
     <h1>element-ui 的table、表单组件二次封装</h1>
     <!-- 查询组件 -->
-    <KolorQueryForm :formItems="formItems" v-model="model" @form-item-change="formItemChange" />
+    <ko-form :formItems="formItems" v-model="model" @form-item-change="formItemChange" />
     <!-- 表单组件 -->
-    <KolorTable 
+    <ko-table 
       :data="tableData" 
       :columns="columns" 
       :border="true" 
@@ -22,9 +22,6 @@
 </template>
 
 <script>
-import KolorTable from './components/kolor-table-jsx.vue';
-import KolorQueryForm from './components/kolor-query-form-jsx.vue';
-
 export default {
   name: 'App',
   data() {
@@ -511,8 +508,6 @@ export default {
   },
   created() {},
   components: {
-    KolorTable,
-    KolorQueryForm
   },
   methods: { 
     pageChange(pagination) {

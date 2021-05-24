@@ -1,8 +1,9 @@
 <script>
 import ElTable from "element-ui/lib/table";
-import { getPropsAndAttrs } from '../utils/index';
+import { getPropsAndAttrs } from '../../utils';
 
 export default {
+  name: 'KoTable',
   props: {
     data: {
       type: Array,
