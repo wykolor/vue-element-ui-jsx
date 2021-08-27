@@ -1,9 +1,23 @@
-import KoForm from './ko-form/src/ko-form.vue';
-import KoTable from './ko-table/src/ko-table.vue';
+import BizForm from './form'
+import BizFormItem from './form-item'
+import BizPanel from './panel'
+import BizTable from './table'
+import BizFilterItem from './table/filter-item'
+import BizLayout from './layout'
+import BizSelect from './select'
+import BizInput from './input'
+import BizSearchInput from './search-input'
 
 const components = [
-  KoForm,
-  KoTable
+  BizForm,
+  BizFormItem,
+  BizPanel,
+  BizTable,
+  BizFilterItem,
+  BizLayout,
+  BizSelect,
+  BizInput,
+  BizSearchInput
 ]
 
 const install = function(Vue) {
